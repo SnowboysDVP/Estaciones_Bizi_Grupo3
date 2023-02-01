@@ -44,7 +44,7 @@
                 String type
                 String coordinates
 
-            #Interfaz - Ismael
+            #Interfaz - Alvaro
             Interfaz de todas las actividades(layout) y del menu
 
             #Menu - Victor
@@ -52,6 +52,13 @@
     
     #Descripción del proyecto
     
+    El proyecto contendra 3 actividades, 2 clases y un splash. El splash aparecera al iniciarse la aplicación
+    y tambien se cargaran los datos de la base de datos en ella
     
-    
+    La primera actividad aparecera despues del splash, aparecera una lista con datos(Previamente cargada en el splash) 
+    de la base de datos un menu para refrescar la base de datos
+
+    Al clickar un dato en la primera actividad iras a la segunda que apareceran los datos de la información clickada
+    habra dos botones para ir pasando entre los datos de la base de datos y un menu el cual tendra para que regreses
+    al listado de la actividad anterior y un buscador de datos el cual te llevara a la que tu le digas.
     

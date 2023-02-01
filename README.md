@@ -10,8 +10,7 @@
 
             Pantalla principal - Alvaro
                 Un listado de datos
-                #Button Actualizar
-
+                
             Pantalla para mostrar los datos - Ismael
                 #Datos del Json
                 id,about,title,estado,estadoEstacion,address
@@ -45,10 +44,14 @@
                 String type
                 String coordinates
 
-            #Interfaz - Victor
-            Interfaz de todas las actividades
+            #Interfaz - Ismael
+            Interfaz de todas las actividades(layout) y del menu
+
+            #Menu - Victor
+            Contiene Listado de registros, Actualizar datos y Buscador de datos.
     
     #Descripción del proyecto
+    
     
     
     

@@ -44,7 +44,11 @@
             Geometria
                 String type
                 String coordinates
+
+            #Interfaz - Victor
+            Interfaz de todas las actividades
     
     #Descripción del proyecto
+    
     
     

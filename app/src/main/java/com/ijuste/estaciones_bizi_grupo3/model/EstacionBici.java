@@ -11,12 +11,12 @@ public class EstacionBici implements Serializable {
     String estadoEstacion;
     String address;
     String tipoEquipamiento;
-    int BicisDisponibles;
+    int bicisDisponibles;
     int anclajesDisponibles;
     String lastUpdated;
     String description;
     String descripcion;
-    String Imagen;
+    String imagen;
     Geometria geometria;
 
     public EstacionBici(){}
@@ -34,12 +34,12 @@ public class EstacionBici implements Serializable {
         this.estadoEstacion = estadoEstacion;
         this.address = address;
         this.tipoEquipamiento = tipoEquipamiento;
-        BicisDisponibles = bicisDisponibles;
+        this.bicisDisponibles = bicisDisponibles;
         this.anclajesDisponibles = anclajesDisponibles;
         this.lastUpdated = lastUpdated;
         this.description = description;
         this.descripcion = descripcion;
-        Imagen = imagen;
+        this.imagen = imagen;
         this.geometria = geometria;
     }
 
@@ -100,11 +100,11 @@ public class EstacionBici implements Serializable {
     }
 
     public int getBicisDisponibles() {
-        return BicisDisponibles;
+        return bicisDisponibles;
     }
 
     public void setBicisDisponibles(int bicisDisponibles) {
-        BicisDisponibles = bicisDisponibles;
+        bicisDisponibles = bicisDisponibles;
     }
 
     public int getAnclajesDisponibles() {
@@ -140,11 +140,11 @@ public class EstacionBici implements Serializable {
     }
 
     public String getImagen() {
-        return Imagen;
+        return imagen;
     }
 
     public void setImagen(String imagen) {
-        Imagen = imagen;
+        imagen = imagen;
     }
 
     public Geometria getGeometria() {
@@ -165,12 +165,12 @@ public class EstacionBici implements Serializable {
                 "\nEstado de la estacion : " + estadoEstacion +
                 "\nAddress : " + address +
                 "\nTipo de equipamiento : " + tipoEquipamiento +
-                "\nBicisDisponibles : " + BicisDisponibles +
+                "\nBicisDisponibles : " + bicisDisponibles +
                 "\nAnclajesDisponibles : " + anclajesDisponibles +
                 "\nLastUpdated : " + lastUpdated +
                 "\nDescription : " + description +
                 "\nDescripcion : " + descripcion +
-                "\nImagen : " + Imagen + 
+                "\nImagen : " + imagen +
                 "\nGeometria : " + geometria +
                 "--------------------------------";
     }

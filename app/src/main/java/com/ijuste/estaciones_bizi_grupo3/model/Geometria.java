@@ -9,6 +9,8 @@ public class Geometria {
         this.coordinates = coordinates;
     }
 
+    public Geometria(){}
+
     public String getType() {
         return type;
     }

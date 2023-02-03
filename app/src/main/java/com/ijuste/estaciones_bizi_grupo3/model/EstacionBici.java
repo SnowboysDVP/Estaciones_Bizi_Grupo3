@@ -18,6 +18,8 @@ public class EstacionBici {
     String Imagen;
     Geometria geometria;
 
+    public EstacionBici(){}
+
     public EstacionBici(int id, String about, String title,
                         String estado, String estadoEstacion,
                         String address, String tipoEquipamiento,

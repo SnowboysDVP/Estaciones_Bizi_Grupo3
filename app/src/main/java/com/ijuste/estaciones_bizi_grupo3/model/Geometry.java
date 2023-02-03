@@ -2,16 +2,16 @@ package com.ijuste.estaciones_bizi_grupo3.model;
 
 import java.io.Serializable;
 
-public class Geometria implements Serializable {
+public class Geometry implements Serializable {
     String type;
-    String coordinates;
+    String[] coordinates;
 
-    public Geometria(String type, String coordinates) {
+    public Geometry(String type, String[] coordinates) {
         this.type = type;
         this.coordinates = coordinates;
     }
 
-    public Geometria(){}
+    public Geometry(){}
 
     public String getType() {
         return type;
@@ -21,11 +21,11 @@ public class Geometria implements Serializable {
         this.type = type;
     }
 
-    public String getCoordinates() {
+    public String[] getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(String coordinates) {
+    public void setCoordinates(String[] coordinates) {
         this.coordinates = coordinates;
     }
 
@@ -33,6 +33,6 @@ public class Geometria implements Serializable {
     public String toString() {
         return "Geometria : " +
                 "\nType=" + type +
-                "\nCoordinates='" + coordinates;
+                "\nCoordinates='" + coordinates[0]+coordinates[1];
     }
 }

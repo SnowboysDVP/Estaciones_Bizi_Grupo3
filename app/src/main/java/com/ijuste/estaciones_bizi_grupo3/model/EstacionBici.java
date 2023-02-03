@@ -1,7 +1,6 @@
 package com.ijuste.estaciones_bizi_grupo3.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class EstacionBici implements Serializable {
     int id;
@@ -16,8 +15,8 @@ public class EstacionBici implements Serializable {
     String lastUpdated;
     String description;
     String descripcion;
-    String imagen;
-    Geometria geometria;
+    String icon;
+    Geometry geometry;
 
     public EstacionBici(){}
 
@@ -26,7 +25,7 @@ public class EstacionBici implements Serializable {
                         String address, String tipoEquipamiento,
                         int bicisDisponibles, int anclajesDisponibles,
                         String lastUpdated, String description, String descripcion,
-                        String imagen, Geometria geometria) {
+                        String imagen, Geometry geometria) {
         this.id = id;
         this.about = about;
         this.title = title;
@@ -39,8 +38,8 @@ public class EstacionBici implements Serializable {
         this.lastUpdated = lastUpdated;
         this.description = description;
         this.descripcion = descripcion;
-        this.imagen = imagen;
-        this.geometria = geometria;
+        this.icon = imagen;
+        this.geometry = geometria;
     }
 
     public int getId() {
@@ -139,20 +138,20 @@ public class EstacionBici implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public String getImagen() {
-        return imagen;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setImagen(String imagen) {
-        imagen = imagen;
+    public void setIcon(String icon) {
+        icon = icon;
     }
 
-    public Geometria getGeometria() {
-        return geometria;
+    public Geometry getGeometry() {
+        return geometry;
     }
 
-    public void setGeometria(Geometria geometria) {
-        this.geometria = geometria;
+    public void setGeometry(Geometry geometry) {
+        this.geometry = geometry;
     }
 
     @Override
@@ -170,8 +169,8 @@ public class EstacionBici implements Serializable {
                 "\nLastUpdated : " + lastUpdated +
                 "\nDescription : " + description +
                 "\nDescripcion : " + descripcion +
-                "\nImagen : " + imagen +
-                "\nGeometria : " + geometria +
+                "\nImagen : " + icon +
+                "\nGeometria : " + geometry +
                 "--------------------------------";
     }
 }

@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 
 import com.ijuste.estaciones_bizi_grupo3.R;
 import com.ijuste.estaciones_bizi_grupo3.model.EstacionBici;
-import com.ijuste.estaciones_bizi_grupo3.model.Geometria;
+import com.ijuste.estaciones_bizi_grupo3.model.Geometry;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -50,9 +50,9 @@ public class EstacionesADO implements AutoCloseable{
             values.put("lastUpdated", estacion.getLastUpdated());
             values.put("description", estacion.getDescription());
             values.put("descripcion", estacion.getDescripcion());
-            values.put("Imagen", estacion.getImagen());
-            values.put("type", estacion.getGeometria().getType());
-            values.put("coordinates", estacion.getGeometria().getCoordinates());
+            values.put("Imagen", estacion.getIcon());
+            values.put("type", estacion.getGeometry().getType());
+            values.put("coordinates", estacion.getGeometry().getCoordinates());
             helper.getWritableDatabase().insert(TABLA, null, values);
         }
     }
@@ -92,7 +92,7 @@ public class EstacionesADO implements AutoCloseable{
                     cursor.getString(10),
                     cursor.getString(11),
                     cursor.getString(12),
-                    new Geometria(cursor.getString(13), cursor.getString(14))));
+                    new Geometry(cursor.getString(13), cursor.getString(14))));
         }
     }
 

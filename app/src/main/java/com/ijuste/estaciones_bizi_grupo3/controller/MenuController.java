@@ -14,6 +14,8 @@ import com.ijuste.estaciones_bizi_grupo3.R;
 
 public class MenuController extends AppCompatActivity {
 
+    private String parametro;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -37,7 +39,6 @@ public class MenuController extends AppCompatActivity {
 
     private void buscarPorParametro() {
 
-        final String[] parametro = new String[1];
 
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -49,7 +50,7 @@ public class MenuController extends AppCompatActivity {
 
 
         new AlertDialog.Builder(this).setView(layout)
-                .setPositiveButton("OK", (dialog, which) -> parametro[0] = input.getText().toString())
+                .setPositiveButton("OK", (dialog, which) -> parametro = input.getText().toString())
                 .setNegativeButton("Cancel", (v, x) -> finish())
                 .setOnCancelListener(v -> finish())
                 .setTitle("Buscador")

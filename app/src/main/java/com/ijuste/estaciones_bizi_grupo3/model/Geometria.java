@@ -1,6 +1,8 @@
 package com.ijuste.estaciones_bizi_grupo3.model;
 
-public class Geometria {
+import java.io.Serializable;
+
+public class Geometria implements Serializable {
     String type;
     String coordinates;
 

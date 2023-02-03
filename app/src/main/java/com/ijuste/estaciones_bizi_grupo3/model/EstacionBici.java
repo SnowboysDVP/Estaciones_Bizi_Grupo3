@@ -1,8 +1,9 @@
 package com.ijuste.estaciones_bizi_grupo3.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class EstacionBici {
+public class EstacionBici implements Serializable {
     int id;
     String about;
     String title;

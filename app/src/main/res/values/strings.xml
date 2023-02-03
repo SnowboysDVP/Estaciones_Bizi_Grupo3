@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Estaciones_Bizi_Grupo3</string>
+    <string name="bbdd">estacionesBicis</string>
+    <string name="tablaEstacion">estaciones</string>
 </resources>

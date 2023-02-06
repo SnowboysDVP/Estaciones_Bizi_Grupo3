@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS estaciones;");
         String sql = "CREATE TABLE estaciones(id INTEGER PRIMARY KEY, about TEXT, title TEXT, estado TEXT, estadoEstacion TEXT," +
                 "address TEXT, tipoEquipamiento TEXT, BicisDisponibles INTEGER, anclajesDisponibles INTEGER," +
-                "lastUpdated TEXT, description TEXT, descripcion TEXT, Imagen TEXT, type TEXT, coordinates TEXT)";
+                "lastUpdated TEXT, description TEXT, descripcion TEXT, Imagen TEXT, type TEXT, latitude TEXT, longitude TEXT)";
         db.execSQL(sql);
     }
 

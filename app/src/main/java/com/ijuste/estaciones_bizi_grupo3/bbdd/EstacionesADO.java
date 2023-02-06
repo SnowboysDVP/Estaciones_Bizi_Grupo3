@@ -52,7 +52,8 @@ public class EstacionesADO implements AutoCloseable{
             values.put("descripcion", estacion.getDescripcion());
             values.put("Imagen", estacion.getIcon());
             values.put("type", estacion.getGeometry().getType());
-            values.put("coordinates", estacion.getGeometry().getCoordinates());
+            values.put("coordinates", estacion.getGeometry().getCoordinates()[0]);
+            values.put("coordinates", estacion.getGeometry().getCoordinates()[1]);
             helper.getWritableDatabase().insert(TABLA, null, values);
         }
     }
@@ -92,7 +93,7 @@ public class EstacionesADO implements AutoCloseable{
                     cursor.getString(10),
                     cursor.getString(11),
                     cursor.getString(12),
-                    new Geometry(cursor.getString(13), cursor.getString(14))));
+                    new Geometry(cursor.getString(13), new String[]{cursor.getString(14), cursor.getString(15)})));
         }
     }
 

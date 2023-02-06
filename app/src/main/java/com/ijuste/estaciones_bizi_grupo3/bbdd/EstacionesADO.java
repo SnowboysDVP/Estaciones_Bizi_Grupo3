@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.ijuste.estaciones_bizi_grupo3.R;
 import com.ijuste.estaciones_bizi_grupo3.model.EstacionBici;
@@ -19,67 +20,63 @@ import java.util.List;
 public class EstacionesADO implements AutoCloseable{
 
     private final String TABLA;
-    private Context context;
-    private DBHelper helper;
-    private SQLiteDatabase db;
+    private final DBHelper helper;
+    private final SQLiteDatabase db;
 
     public EstacionesADO(Context context){
-        this.context = context;
         helper = new DBHelper(context);
         db = helper.getReadableDatabase();
         TABLA = context.getString(R.string.tablaEstacion);
     }
 
-    private void actualizarDatos(@NotNull List<EstacionBici> list){
+    public void update(@NotNull List<EstacionBici> list){
         helper.onCreate(db);
         insertAll(list);
     }
 
     public void insertAll(@NotNull List<EstacionBici> list){
         for (EstacionBici estacion : list) {
-            ContentValues values = new ContentValues();
-            values.put("id", estacion.getId());
-            values.put("about", estacion.getAbout());
-            values.put("title", estacion.getTitle());
-            values.put("estado", estacion.getEstado());
-            values.put("estadoEstacion", estacion.getEstadoEstacion());
-            values.put("address", estacion.getAddress());
-            values.put("tipoEquipamiento", estacion.getTipoEquipamiento());
-            values.put("BicisDisponibles", estacion.getBicisDisponibles());
-            values.put("anclajesDisponibles", estacion.getAnclajesDisponibles());
-            values.put("lastUpdated", estacion.getLastUpdated());
-            values.put("description", estacion.getDescription());
-            values.put("descripcion", estacion.getDescripcion());
-            values.put("Imagen", estacion.getIcon());
-            values.put("type", estacion.getGeometry().getType());
-            values.put("coordinates", estacion.getGeometry().getCoordinates()[0]);
-            values.put("coordinates", estacion.getGeometry().getCoordinates()[1]);
-            helper.getWritableDatabase().insert(TABLA, null, values);
+            insertStation(estacion);
         }
     }
 
-    public List<EstacionBici> getAll(){
-        List<EstacionBici> list = new ArrayList<>();
-        String sql = "SELECT * FROM " + TABLA;
-        Cursor cursor = db.rawQuery(sql, null);
+    private void insertStation(@NonNull EstacionBici estacion) {
+        ContentValues values = new ContentValues();
+        values.put("id", estacion.getId());
+        values.put("about", estacion.getAbout());
+        values.put("title", estacion.getTitle());
+        values.put("estado", estacion.getEstado());
+        values.put("estadoEstacion", estacion.getEstadoEstacion());
+        values.put("address", estacion.getAddress());
+        values.put("tipoEquipamiento", estacion.getTipoEquipamiento());
+        values.put("BicisDisponibles", estacion.getBicisDisponibles());
+        values.put("anclajesDisponibles", estacion.getAnclajesDisponibles());
+        values.put("lastUpdated", estacion.getLastUpdated());
+        values.put("description", estacion.getDescription());
+        values.put("descripcion", estacion.getDescripcion());
+        values.put("Imagen", estacion.getIcon());
+        values.put("type", estacion.getGeometry().getType());
+        values.put("latitude", estacion.getGeometry().getCoordinates()[0]);
+        values.put("longitude", estacion.getGeometry().getCoordinates()[1]);
+        helper.getWritableDatabase().insert(TABLA, null, values);
+    }
 
-        if(!cursor.moveToFirst()) return null;
-        recorrerCursor(cursor, list);
-        return list;
+    public List<EstacionBici> getAll(){
+        String sql = "SELECT * FROM " + TABLA;
+        return runCursor(db.rawQuery(sql, null));
     }
 
     public List<EstacionBici> getByAddress(String address){
-        List<EstacionBici> list = new ArrayList<>();
-        String sql = "SELECT * FROM " + TABLA + "WHERE addres LIKE %?%";
-        Cursor cursor = db.rawQuery(sql, new String[]{address});
-
-        if(!cursor.moveToFirst()) return null;
-        recorrerCursor(cursor, list);
-        return list;
+        String sql = "SELECT * FROM " + TABLA + " WHERE address LIKE ?";
+        address = "%" + address + "%";
+        return runCursor(db.rawQuery(sql, new String[]{address}));
     }
 
-    private void recorrerCursor(@NonNull Cursor cursor, List<EstacionBici> list) {
-        while (cursor.moveToNext()) {
+    @Nullable
+    private List<EstacionBici> runCursor(@NonNull Cursor cursor) {
+        List<EstacionBici> list = new ArrayList<>();
+        if(!cursor.moveToFirst()) return null;
+        do {
             list.add(new EstacionBici(cursor.getInt(0),
                     cursor.getString(1),
                     cursor.getString(2),
@@ -94,11 +91,12 @@ public class EstacionesADO implements AutoCloseable{
                     cursor.getString(11),
                     cursor.getString(12),
                     new Geometry(cursor.getString(13), new String[]{cursor.getString(14), cursor.getString(15)})));
-        }
+        }  while (cursor.moveToNext());
+        return list;
     }
 
     @Override
-    public void close() throws Exception {
+    public void close(){
         db.close();
     }
 }

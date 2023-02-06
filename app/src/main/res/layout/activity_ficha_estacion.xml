@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/txtAbout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.FichaEstacionActivity">
@@ -11,6 +10,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/escudo"
+        android:backgroundTint="#BEFFFFFF"
+        android:backgroundTintMode="screen"
         android:orientation="vertical">
 
         <Space
@@ -29,6 +31,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Id:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -37,6 +40,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -57,6 +61,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="About:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -65,6 +70,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -86,6 +92,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Title:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -94,6 +101,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -115,6 +123,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Estado:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -123,6 +132,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -144,6 +154,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Estado estación:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -152,6 +163,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -173,6 +185,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Adress:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -181,6 +194,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -202,6 +216,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Tipo equipamiento:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -210,6 +225,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -231,6 +247,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Bicis disponibles:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -239,6 +256,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -260,6 +278,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Anclajes disponibles:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -268,6 +287,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -289,6 +309,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Última actualización:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -297,6 +318,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -320,6 +342,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Description:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -328,6 +351,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -351,6 +375,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Descripción:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -359,6 +384,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -382,6 +408,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Icon:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -390,6 +417,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -413,6 +441,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Type:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -421,6 +450,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -444,6 +474,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Coordinates:"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -452,6 +483,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -467,14 +499,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.515"
-        app:srcCompat="@drawable/estacion" />
+        app:srcCompat="@drawable/izquierda" />
 
     <ImageView
         android:id="@+id/imgDelante"
         android:layout_width="127dp"
         android:layout_height="51dp"
-        app:srcCompat="@drawable/iconobicibueno"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="647dp" />
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imgAtras"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.515"
+        app:srcCompat="@drawable/derecha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

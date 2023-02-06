@@ -48,6 +48,7 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
 
             Intent intent = new Intent(v.getContext(), FichaEstacionActivity.class);
             intent.putExtra("posicion", position);
+            intent.putExtra("array", (Serializable) estaciones);
             v.getContext().startActivity(intent);
         });
     }

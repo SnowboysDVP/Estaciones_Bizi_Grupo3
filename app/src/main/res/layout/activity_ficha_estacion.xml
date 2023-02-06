@@ -8,6 +8,7 @@
     tools:context=".view.FichaEstacionActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -456,4 +457,24 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgAtras"
+        android:layout_width="127dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.515"
+        app:srcCompat="@drawable/estacion" />
+
+    <ImageView
+        android:id="@+id/imgDelante"
+        android:layout_width="127dp"
+        android:layout_height="51dp"
+        app:srcCompat="@drawable/iconobicibueno"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="647dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

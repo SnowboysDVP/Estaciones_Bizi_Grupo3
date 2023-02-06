@@ -1,6 +1,7 @@
 package com.ijuste.estaciones_bizi_grupo3.controller.adapter;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.text.NoCopySpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ijuste.estaciones_bizi_grupo3.R;
 import com.ijuste.estaciones_bizi_grupo3.model.EstacionBici;
+import com.ijuste.estaciones_bizi_grupo3.view.FichaEstacionActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHolder> {
+public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHolder> implements Serializable {
 
     private final List<EstacionBici> estaciones;
 
@@ -43,6 +46,9 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
 
         holder.itemView.setOnClickListener(v->{
 
+            Intent intent = new Intent(v.getContext(), FichaEstacionActivity.class);
+            intent.putExtra("posicion", position);
+            v.getContext().startActivity(intent);
         });
     }
 

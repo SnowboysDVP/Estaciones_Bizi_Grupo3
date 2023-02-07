@@ -29,14 +29,6 @@ public class FichaEstacionActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ficha_estacion);
-        /*int [] textviews={R.id.txtId,R.id.txtAboot,R.id.txtTitle,R.id.txtEstado,R.id.txtEstadoEstacion,R.id.txtAdress,
-                            R.id.txtTipoEquipamiento,R.id.txtBicisDisp,R.id.txtAnclajesDisp,R.id.txtUltimaActualizacion,
-                            R.id.txtDescription,R.id.txtDescripcion,R.id.txtIcon,R.id.txtType,R.id.txtCoordinates};
-        String[]nombreview={"txtId","txtAboot","txtTitle","txtEstado","txtEstadoEstacion","txtAdress",
-                            "txtTipoEquipamiento","txtBicisDisp","txtAnclajesDisp","txtUltimaActualizacion",
-                            "txtDescription","txtDescripcion","txtIcon","txtType","txtCoordinates"};
-        int[]botones={R.id.imgAtras,R.id.imgDelante};
-        String[]nombrebotones={"imgAtras","imgDelante"};*/
 
         iniciarComponentes(textviews,nombretextview,botones,nombrebotones);
         EstacionesADO miestaciones= new EstacionesADO(this);
@@ -67,9 +59,23 @@ public class FichaEstacionActivity extends AppCompatActivity implements View.OnC
             nombrebotones[1].setEnabled(true);
         }
 
-        for(int i =0;i<=nombretextview.length;i++){
-            nombretextview[i].setText(String.valueOf(lista.get(posicion)));
-        }
+            nombretextview[0].setText(String.valueOf(lista.get(posicion).getId()));
+            nombretextview[1].setText(String.valueOf(lista.get(posicion).getAbout()));
+            nombretextview[2].setText(String.valueOf(lista.get(posicion).getTitle()));
+            nombretextview[3].setText(String.valueOf(lista.get(posicion).getEstado()));
+            nombretextview[4].setText(String.valueOf(lista.get(posicion).getEstadoEstacion()));
+            nombretextview[5].setText(String.valueOf(lista.get(posicion).getAddress()));
+            nombretextview[6].setText(String.valueOf(lista.get(posicion).getTipoEquipamiento()));
+            nombretextview[7].setText(String.valueOf(lista.get(posicion).getBicisDisponibles()));
+            nombretextview[8].setText(String.valueOf(lista.get(posicion).getAnclajesDisponibles()));
+            nombretextview[9].setText(String.valueOf(lista.get(posicion).getLastUpdated()));
+            nombretextview[10].setText(String.valueOf(lista.get(posicion).getDescription()));
+            nombretextview[11].setText(String.valueOf(lista.get(posicion).getDescripcion()));
+            nombretextview[12].setText(String.valueOf(lista.get(posicion).getIcon()));
+            nombretextview[13].setText(String.valueOf(lista.get(posicion).getGeometry().getType()));
+            nombretextview[14].setText(String.valueOf(lista.get(posicion).getGeometry().getCoordinates()));
+
+
     }
     private void iniciarComponentes(int[]idview, TextView[]nombreview, int[]idimagen, ImageView[]imagenes){
 

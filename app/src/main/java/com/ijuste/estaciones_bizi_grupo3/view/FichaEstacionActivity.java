@@ -79,10 +79,10 @@ public class FichaEstacionActivity extends AppCompatActivity implements View.OnC
     }
     private void iniciarComponentes(int[]idview, TextView[]nombreview, int[]idimagen, ImageView[]imagenes){
 
-        for(int i=0;i<= idview.length;i++){
+        for(int i=0;i< idview.length;i++){
             nombreview[i]=findViewById(idview[i]);
         }
-        for(int x=0;x<=imagenes.length;x++){
+        for(int x=0;x<imagenes.length;x++){
             imagenes[x]=findViewById(idimagen[x]);
         }
     }

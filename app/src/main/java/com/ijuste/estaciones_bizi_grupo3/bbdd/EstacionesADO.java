@@ -61,20 +61,20 @@ public class EstacionesADO implements AutoCloseable{
         helper.getWritableDatabase().insert(TABLA, null, values);
     }
 
-    public List<EstacionBici> getAll(){
+    public ArrayList<EstacionBici> getAll(){
         String sql = "SELECT * FROM " + TABLA;
         return runCursor(db.rawQuery(sql, null));
     }
 
-    public List<EstacionBici> getByAddress(String address){
+    public ArrayList<EstacionBici> getByAddress(String address){
         String sql = "SELECT * FROM " + TABLA + " WHERE address LIKE ?";
         address = "%" + address + "%";
         return runCursor(db.rawQuery(sql, new String[]{address}));
     }
 
     @Nullable
-    private List<EstacionBici> runCursor(@NonNull Cursor cursor) {
-        List<EstacionBici> list = new ArrayList<>();
+    private ArrayList<EstacionBici> runCursor(@NonNull Cursor cursor) {
+        ArrayList<EstacionBici> list = new ArrayList<>();
         if(!cursor.moveToFirst()) return null;
         do {
             list.add(new EstacionBici(cursor.getInt(0),
@@ -91,7 +91,7 @@ public class EstacionesADO implements AutoCloseable{
                     cursor.getString(11),
                     cursor.getString(12),
                     new Geometry(cursor.getString(13), new String[]{cursor.getString(14), cursor.getString(15)})));
-        }  while (cursor.moveToNext());
+        } while (cursor.moveToNext());
         return list;
     }
 

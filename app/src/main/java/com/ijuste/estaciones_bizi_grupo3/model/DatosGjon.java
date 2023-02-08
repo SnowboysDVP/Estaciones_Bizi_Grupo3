@@ -5,27 +5,27 @@ import java.util.List;
 
 public class DatosGjon implements Serializable {
 
-    String total;
+    String totalCount;
     String start;
     String rows;
-    List<EstacionBici> lista;
+    List<EstacionBici> result;
 
     public DatosGjon(String total, String start, String rows, List<EstacionBici> lista) {
-        this.total = total;
+        this.totalCount = total;
         this.start = start;
         this.rows = rows;
-        this.lista = lista;
+        this.result = lista;
     }
 
     public DatosGjon() {
     }
 
-    public String getTotal() {
-        return total;
+    public String getTotalCount() {
+        return totalCount;
     }
 
-    public void setTotal(String total) {
-        this.total = total;
+    public void setTotalCount(String totalCount) {
+        this.totalCount = totalCount;
     }
 
     public String getStart() {
@@ -44,11 +44,11 @@ public class DatosGjon implements Serializable {
         this.rows = rows;
     }
 
-    public List<EstacionBici> getLista() {
-        return lista;
+    public List<EstacionBici> getResult() {
+        return result;
     }
 
-    public void setLista(List<EstacionBici> lista) {
-        this.lista = lista;
+    public void setResult(List<EstacionBici> result) {
+        this.result = result;
     }
 }

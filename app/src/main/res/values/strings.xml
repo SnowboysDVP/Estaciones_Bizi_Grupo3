@@ -2,4 +2,6 @@
     <string name="app_name">Estaciones_Bizi_Grupo3</string>
     <string name="bbdd">estacionesBicis</string>
     <string name="tablaEstacion">estaciones</string>
+    <string name="listado">Listado de Bicis</string>
+    <string name="informacion">Informacion Completa</string>
 </resources>

@@ -67,8 +67,7 @@ public class MenuController extends AppCompatActivity {
                     intent.putExtra("listafiltrada",ado.getByAddress(parametro));
                     startActivity(intent);
                 } )
-                .setNegativeButton("Cancel", (v, x) -> finish())
-                .setOnCancelListener(v -> cambioActividad())
+                .setNegativeButton("Cancel", null)
                 .setTitle("Buscador")
                 .setMessage("Introduce un parametro para la busqueda")
                 .show();

@@ -32,17 +32,20 @@ public class MenuController extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.listadoRegistros){
-            Intent intento = new Intent(getApplicationContext(), ListadoActivity.class);
-            startActivity(intento);
+            cambioActividad();
         }else if(item.getItemId()==R.id.actualizarDatos){
-            ado.getAll();
+            new JsonController(this, "https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta.json?rf=html&srsname=wgs84&start=0&rows=50&distance=500");
+            cambioActividad();
         }else if(item.getItemId()==R.id.busacdorDatos){
             buscarPorParametro();
-
-
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    private void cambioActividad() {
+        Intent intento = new Intent(getApplicationContext(), ListadoActivity.class);
+        startActivity(intento);
     }
 
     private void buscarPorParametro() {
@@ -65,7 +68,7 @@ public class MenuController extends AppCompatActivity {
                     startActivity(intent);
                 } )
                 .setNegativeButton("Cancel", (v, x) -> finish())
-                .setOnCancelListener(v -> finish())
+                .setOnCancelListener(v -> cambioActividad())
                 .setTitle("Buscador")
                 .setMessage("Introduce un parametro para la busqueda")
                 .show();

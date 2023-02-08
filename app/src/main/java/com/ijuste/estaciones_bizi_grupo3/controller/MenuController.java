@@ -38,9 +38,7 @@ public class MenuController extends AppCompatActivity {
             ado.getAll();
         }else if(item.getItemId()==R.id.busacdorDatos){
             buscarPorParametro();
-            Intent intent = new Intent(this,ListadoActivity.class);
-            intent.putExtra("listafiltrada",ado.getByAddress(parametro));
-            startActivity(intent);
+
 
         }
         return super.onOptionsItemSelected(item);
@@ -60,7 +58,12 @@ public class MenuController extends AppCompatActivity {
 
 
         new AlertDialog.Builder(this).setView(layout)
-                .setPositiveButton("OK", (dialog, which) -> parametro = input.getText().toString())
+                .setPositiveButton("OK", (dialog, which) ->{
+                    parametro = input.getText().toString();
+                    Intent intent = new Intent(this,ListadoActivity.class);
+                    intent.putExtra("listafiltrada",ado.getByAddress(parametro));
+                    startActivity(intent);
+                } )
                 .setNegativeButton("Cancel", (v, x) -> finish())
                 .setOnCancelListener(v -> finish())
                 .setTitle("Buscador")

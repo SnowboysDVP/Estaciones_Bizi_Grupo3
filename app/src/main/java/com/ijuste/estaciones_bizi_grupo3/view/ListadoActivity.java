@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.ijuste.estaciones_bizi_grupo3.R;
@@ -21,6 +22,8 @@ public class ListadoActivity extends MenuController {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado);
 
+        Intent intent = getIntent();
+
         RecyclerView recycler = findViewById(R.id.recyclerLista);
         recycler.setHasFixedSize(true);
 
@@ -29,7 +32,7 @@ public class ListadoActivity extends MenuController {
 
         EstacionesADO objetoAdo = new EstacionesADO(this);
 
-        List<EstacionBici> estaciones = objetoAdo.getAll();
+        List<EstacionBici> estaciones = intent.hasExtra("listafiltrada")? (List<EstacionBici>) intent.getSerializableExtra("listafiltrada") : objetoAdo.getAll();
         recycler.setAdapter(new ListadoAdapter(estaciones));
 
     }

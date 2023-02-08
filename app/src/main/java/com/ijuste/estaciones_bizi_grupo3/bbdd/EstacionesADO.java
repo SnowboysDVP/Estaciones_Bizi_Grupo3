@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.ijuste.estaciones_bizi_grupo3.R;
 import com.ijuste.estaciones_bizi_grupo3.model.EstacionBici;
@@ -72,10 +71,10 @@ public class EstacionesADO implements AutoCloseable{
         return runCursor(db.rawQuery(sql, new String[]{address}));
     }
 
-    @Nullable
+    @NonNull
     private ArrayList<EstacionBici> runCursor(@NonNull Cursor cursor) {
         ArrayList<EstacionBici> list = new ArrayList<>();
-        if(!cursor.moveToFirst()) return null;
+        if(!cursor.moveToFirst()) return new ArrayList<>();
         do {
             list.add(new EstacionBici(cursor.getInt(0),
                     cursor.getString(1),

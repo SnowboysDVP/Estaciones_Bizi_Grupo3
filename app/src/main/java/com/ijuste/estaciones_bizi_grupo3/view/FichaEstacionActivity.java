@@ -11,11 +11,12 @@ import android.widget.Toast;
 
 import com.ijuste.estaciones_bizi_grupo3.R;
 import com.ijuste.estaciones_bizi_grupo3.bbdd.EstacionesADO;
+import com.ijuste.estaciones_bizi_grupo3.controller.MenuController;
 import com.ijuste.estaciones_bizi_grupo3.model.EstacionBici;
 
 import java.util.List;
 
-public class FichaEstacionActivity extends AppCompatActivity implements View.OnClickListener {
+public class FichaEstacionActivity extends MenuController implements View.OnClickListener {
 
     private int [] textviews={R.id.txtId,R.id.txtAboot,R.id.txtTitle,R.id.txtEstado,R.id.txtEstadoEstacion,R.id.txtAdress,
             R.id.txtTipoEquipamiento,R.id.txtBicisDisp,R.id.txtAnclajesDisp,R.id.txtUltimaActualizacion,

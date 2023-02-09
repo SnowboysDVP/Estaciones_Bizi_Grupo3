@@ -1,6 +1,8 @@
 package com.ijuste.estaciones_bizi_grupo3.controller;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,10 +18,13 @@ import com.ijuste.estaciones_bizi_grupo3.bbdd.EstacionesADO;
 import com.ijuste.estaciones_bizi_grupo3.controller.adapter.ListadoAdapter;
 import com.ijuste.estaciones_bizi_grupo3.view.ListadoActivity;
 
+import android.os.Handler;
 public class MenuController extends AppCompatActivity {
     private EstacionesADO ado;
 
     private String parametro;
+
+    private ProgressDialog progressDialog;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,8 +39,9 @@ public class MenuController extends AppCompatActivity {
         if(item.getItemId()==R.id.listadoRegistros){
             cambioActividad();
         }else if(item.getItemId()==R.id.actualizarDatos){
+            showProgressDialog();
             new JsonController(this, "https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta.json?rf=html&srsname=wgs84&start=0&rows=50&distance=500");
-            cambioActividad();
+            //cambioActividad();
         }else if(item.getItemId()==R.id.busacdorDatos){
             buscarPorParametro();
         }
@@ -56,7 +62,7 @@ public class MenuController extends AppCompatActivity {
 
 
         final EditText input = new EditText(this);
-        input.setHint("Calle, Avda...");
+        input.setHint("Ejemplo: Calle, Avda...");
         layout.addView(input);
 
 
@@ -72,4 +78,15 @@ public class MenuController extends AppCompatActivity {
                 .setMessage("Introduce una dirección para la busqueda")
                 .show();
     }
+
+        private void showProgressDialog() {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Por favor espere...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+            Handler handler = new Handler(Looper.myLooper());
+            handler.postDelayed(()-> {
+                progressDialog.dismiss();
+            }, 3500);
+        }
 }

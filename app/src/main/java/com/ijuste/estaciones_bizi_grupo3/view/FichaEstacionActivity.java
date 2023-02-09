@@ -3,6 +3,7 @@ package com.ijuste.estaciones_bizi_grupo3.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -96,8 +97,23 @@ public class FichaEstacionActivity extends MenuController implements View.OnClic
         nombretextview[13].setText(lista.get(posicion).getGeometry().getType());
         nombretextview[14].setText(lista.get(posicion).getGeometry().getCoordinates()[0]+" "+
                                     lista.get(posicion).getGeometry().getCoordinates()[1]);
+
+        cargarWeb(1,lista.get(posicion).getAbout());
+        cargarWeb(4,lista.get(posicion).getEstadoEstacion());
+        cargarWeb(6,lista.get(posicion).getTipoEquipamiento());
+
     }
     private void aviso(){
         Toast.makeText(this, "No hay mas registros", Toast.LENGTH_LONG).show();
+    }
+
+    private void cargarWeb(int elegido, String atributo){
+        if(!nombretextview[elegido].getText().equals("")){
+            nombretextview[elegido].setOnClickListener(v->{
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(atributo.replace("", "")));
+                startActivity(browserIntent);
+            });
+        }
+
     }
 }

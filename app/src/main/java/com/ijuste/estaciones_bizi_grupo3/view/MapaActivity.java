@@ -2,6 +2,7 @@ package com.ijuste.estaciones_bizi_grupo3.view;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -17,6 +18,8 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapaBinding binding;
+    private Float latitud;
+    private Float longitud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        Intent intent=getIntent();
+        latitud=intent.getFloatExtra("latitud",0);
+        longitud=intent.getFloatExtra("longitud",0);
     }
 
     /**
@@ -45,8 +51,18 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+
+        LatLng zaragoza = new LatLng(41.649693, -0.887712);
+
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+
+        MarkerOptions marker = new MarkerOptions();
+        marker.title("Estación");
+        marker.snippet("Aquí vivimos todos");
+        marker.position(zaragoza);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(zaragoza));
+        //mMap.addMarker(marker);
     }
 }

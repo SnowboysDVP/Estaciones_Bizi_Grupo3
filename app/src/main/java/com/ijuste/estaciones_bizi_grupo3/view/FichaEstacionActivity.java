@@ -101,6 +101,13 @@ public class FichaEstacionActivity extends MenuController implements View.OnClic
         cargarWeb(4,lista.get(posicion).getEstadoEstacion());
         cargarWeb(6,lista.get(posicion).getTipoEquipamiento());
 
+        nombretextview[13].setOnClickListener(v -> {
+            Intent intent= new Intent(this,MapaActivity.class);
+            intent.putExtra("latitud",Float.parseFloat(lista.get(posicion).getGeometry().getCoordinates()[0]));
+            intent.putExtra("longitud",Float.parseFloat(lista.get(posicion).getGeometry().getCoordinates()[1]));
+            startActivity(intent);
+        });
+
     }
     private void aviso(){
         Toast.makeText(this, "No hay mas registros", Toast.LENGTH_LONG).show();

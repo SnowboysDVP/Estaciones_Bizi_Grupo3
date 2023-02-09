@@ -62,7 +62,7 @@ public class MenuController extends AppCompatActivity {
 
 
         final EditText input = new EditText(this);
-        input.setHint("Ejemplo: Calle, Avda...");
+        input.setHint("Ejemplo: C/, Avda...");
         layout.addView(input);
 
 

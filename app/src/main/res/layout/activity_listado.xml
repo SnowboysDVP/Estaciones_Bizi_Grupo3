@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/escudo"
+    android:backgroundTint="#BEFFFFFF"
+    android:backgroundTintMode="screen"
     tools:context=".view.ListadoActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerLista"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="602dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

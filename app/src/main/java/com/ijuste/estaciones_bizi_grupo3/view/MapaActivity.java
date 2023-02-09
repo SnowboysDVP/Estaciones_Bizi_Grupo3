@@ -1,9 +1,9 @@
 package com.ijuste.estaciones_bizi_grupo3.view;
 
-import androidx.fragment.app.FragmentActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -53,7 +53,7 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
 
 
-        LatLng zaragoza = new LatLng(41.649693, -0.887712);
+        LatLng zaragoza = new LatLng(longitud, latitud);
 
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
@@ -63,6 +63,7 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         marker.snippet("Aquí vivimos todos");
         marker.position(zaragoza);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(zaragoza));
-        //mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
+        mMap.addMarker(marker);
     }
 }

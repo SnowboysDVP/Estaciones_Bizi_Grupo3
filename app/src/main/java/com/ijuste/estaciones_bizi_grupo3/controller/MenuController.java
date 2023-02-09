@@ -56,7 +56,7 @@ public class MenuController extends AppCompatActivity {
 
 
         final EditText input = new EditText(this);
-        input.setHint("Nombre");
+        input.setHint("Calle, Avda...");
         layout.addView(input);
 
 
@@ -69,7 +69,7 @@ public class MenuController extends AppCompatActivity {
                 } )
                 .setNegativeButton("Cancel", null)
                 .setTitle("Buscador")
-                .setMessage("Introduce un parametro para la busqueda")
+                .setMessage("Introduce una dirección para la busqueda")
                 .show();
     }
 }

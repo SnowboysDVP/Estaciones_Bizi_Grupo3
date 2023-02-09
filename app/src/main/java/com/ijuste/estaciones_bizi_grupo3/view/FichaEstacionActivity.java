@@ -21,7 +21,7 @@ public class FichaEstacionActivity extends MenuController implements View.OnClic
 
     private int [] textviews={R.id.txtId,R.id.txtAboot,R.id.txtTitle,R.id.txtEstado,R.id.txtEstadoEstacion,R.id.txtAdress,
             R.id.txtTipoEquipamiento,R.id.txtBicisDisp,R.id.txtAnclajesDisp,R.id.txtUltimaActualizacion,
-            R.id.txtDescription,R.id.txtDescripcion,R.id.txtIcon,R.id.txtType,R.id.txtCoordinates};
+            R.id.txtDescription,R.id.txtDescripcion,R.id.txtType,R.id.txtCoordinates};
     private TextView[]nombretextview= new TextView[textviews.length];
     private int[]botones={R.id.imgAtras,R.id.imgDelante};
     private ImageView[]nombrebotones=new ImageView[botones.length];
@@ -93,9 +93,8 @@ public class FichaEstacionActivity extends MenuController implements View.OnClic
         nombretextview[9].setText(lista.get(posicion).getLastUpdated());
         nombretextview[10].setText(lista.get(posicion).getDescription());
         nombretextview[11].setText(lista.get(posicion).getDescripcion());
-        nombretextview[12].setText(lista.get(posicion).getIcon());
-        nombretextview[13].setText(lista.get(posicion).getGeometry().getType());
-        nombretextview[14].setText(lista.get(posicion).getGeometry().getCoordinates()[0]+" "+
+        nombretextview[12].setText(lista.get(posicion).getGeometry().getType());
+        nombretextview[13].setText(lista.get(posicion).getGeometry().getCoordinates()[0]+" "+
                                     lista.get(posicion).getGeometry().getCoordinates()[1]);
 
         cargarWeb(1,lista.get(posicion).getAbout());

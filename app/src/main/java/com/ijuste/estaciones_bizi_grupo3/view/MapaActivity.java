@@ -60,7 +60,7 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
 
         MarkerOptions marker = new MarkerOptions();
         marker.title("Estación");
-        marker.snippet("Aquí vivimos todos");
+        marker.snippet("Ubicación de la estación seleccionada");
         marker.position(zaragoza);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(zaragoza));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
